@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="algorithm4:war">
+    <output-path>$PROJECT_DIR$/algorithm4/target</output-path>
+    <root id="archive" name="algorithm4.war">
+      <element id="artifact" artifact-name="algorithm4:war exploded" />
+    </root>
+  </artifact>
+</component>
