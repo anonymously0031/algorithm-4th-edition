@@ -1,4 +1,4 @@
-package base;
+package qr1_base;
 
 public class Sqrt {
     public static void main(String[] args) {
