@@ -2,7 +2,7 @@ package base;
 
 public class IsPrime {
     public static void main(String[] args) {
-        System.out.println(isPrime(2467));
+        System.out.println(isPrime(2467));//true
     }
 
     public static boolean isPrime(int N) {
