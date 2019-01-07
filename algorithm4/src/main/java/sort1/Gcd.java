@@ -2,7 +2,7 @@ package sort1;
 
 public class Gcd {
     public static void main(String[] args) {
-        System.out.println(gcd(13, 16));
+        System.out.println(gcd(12, 16));
     }
 
     public static int gcd(int p, int q) {
