@@ -1,4 +1,4 @@
-package sort1;
+package base;
 
 public class Gcd {
     public static void main(String[] args) {
