@@ -4,16 +4,27 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Insertion {
     private Insertion() {
     }
-
     public static void main(String[] args) {
 //        String[] a = StdIn.readAllStrings();
         String[] a = {"12", "ed", "rf", "4r", "y5", "na"};
         sort(a);
         show(a);
+
+
+        final int c = 3;
+//        c = 4;
+        String d = new String("34");
+        d = new String("27");
+        d = null;
+        System.out.println(d);
+
+        Map map = new HashMap<String,Object>();
     }
 
     public static void sort(Comparable[] a) { // 将a[]按升序排列
