@@ -1,4 +1,4 @@
-package base;
+package qr1_base;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
@@ -67,7 +67,7 @@ public class ThreeSum {
 
 //        int[] a = In.readInts(args[0]);
         // elapsed time = 161.783
-        int[] a = new In("D:\\Hawkins\\algs4-data\\1Kints.txt").readAllInts();
+        int[] a = new In("D:\\Hawkins\\algs4-data\\2Kints.txt").readAllInts();
 
         Stopwatch timer = new Stopwatch();
         int cnt = count(a);
