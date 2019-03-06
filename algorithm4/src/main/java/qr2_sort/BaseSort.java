@@ -1,0 +1,109 @@
+package qr2_sort;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+
+import java.io.File;
+import java.util.Comparator;
+
+import static edu.princeton.cs.algs4.StdOut.println;
+
+/**
+ * Sort 父类。
+ *
+ */
+public abstract class BaseSort {
+    public static void main(String[] args) {
+        String[] a = new In(new File(BaseSort.class.getResource("").getPath() + File.separator + "words3.txt")).readAllStrings();
+        BaseSort baseSort = new SelectionSort();
+        baseSort.sort(a);
+        println("Is sorted: " + baseSort.isSorted(a));
+        baseSort.show(a);
+    }
+
+    /**
+     * 实现排序的算法。
+     * @param arr sorted array
+     * @return
+     */
+    public abstract BaseSort sort(Comparable[] arr);
+    /**
+     * is v < w ?
+     *
+     * @param c
+     * @param v
+     * @param w
+     * @return
+     */
+    public static boolean less(final Comparator c, final Object v, final Object w) {
+        return (c.compare(v, w) < 0);
+    }
+    /**
+     * 比较 v 是否大于 w。
+     *
+     * @param v
+     * @param w
+     * @return
+     */
+    public boolean less(final Comparable v, final Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
+    /**
+     * exchange these two elements.
+     *
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public void exchange(final Comparable[] arr, final int i, final int j) {
+        Comparable t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+    }
+
+    /**
+     * print all elements.
+     *
+     * @param arr
+     */
+    public void show(final Comparable[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            StdOut.print(arr[i] + " ");
+        }
+        println();
+    }
+
+    /**
+     * is the array sorted.
+     *
+     * @param arr
+     * @return
+     */
+    public boolean isSorted(final Comparable[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            if (less(arr[i], arr[i - 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * is the array sorted from arr[lo] to arr[hi]
+     *
+     * @param arr
+     * @param lo
+     * @param hi
+     * @return
+     */
+    public boolean isSorted(final Comparable[] arr, final int lo, final int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
+            if (less(arr[i], arr[i - 1])) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+}
