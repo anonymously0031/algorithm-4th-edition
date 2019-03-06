@@ -41,6 +41,7 @@ public class ThreeSumFast {
 
     public static void main(String[] args)  {
 //        int[] a = In.readInts(args[0]);
+
         int[] a = new In("D:\\Hawkins\\algs4-data\\2Kints.txt").readAllInts();
         Stopwatch timer = new Stopwatch();
         int cnt = count(a);
