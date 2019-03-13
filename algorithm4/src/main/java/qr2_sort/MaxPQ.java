@@ -66,7 +66,7 @@ public class MaxPQ<Key extends Comparable<Key>> extends BasePriorityQueue<Key> {
     private void sink(int k) {
         while (2 * k <= N) {
             int j = 2 * k;
-            if (j < N && less(pq[j], pq[j + 1])) {
+            if (j < N && less(pq[j], pq[j + 1])) {//取出较大子节点位置
                 j++;
             }
             if (!less(pq[k], pq[j])) {
