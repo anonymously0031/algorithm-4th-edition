@@ -64,7 +64,8 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        String[] a = new String[]{"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
+//        String[] a = new String[]{"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
+        String[] a = new String[]{"23", "25", "17", "65", "23", "43", "11", "89", "34", "91", "57"};
         println("排序前：");
         display(a);
         HeapSort.sort(a);
