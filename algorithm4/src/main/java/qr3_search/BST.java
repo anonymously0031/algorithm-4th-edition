@@ -1,45 +1,16 @@
-package qr3_search.section32_BinarySearchTrees;
+package qr3_search;
 
-import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Queue;
-import com.leong.chapter03_Searching.BaseComparableBaseST;
-import edu.princeton.cs.algs4.Edge;
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdOut;
-
 
 /**
  * 二叉查找树。
- *
- * @author leongfeng created on 2017/11/13.
  */
 public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseST<Key, Value> {
     /**
      * 根节点。
      */
     private Node root;
-
-    public static void main(String[] args) {
-        BST<String, Integer> bst = new BST<>();
-        StdOut.println("S E A R C H E X A M P L E");
-//        String[] strings = "S E A R C H E X A M P L E".split("\\s");
-        String[] strings = "S E A R C H X M".split("\\s");
-        for (int i = 0; i < strings.length; i++) {
-            bst.put(strings[i], i);
-        }
-        StdOut.println("floor: " + bst.floor("G"));
-        StdOut.println("ceiling: " + bst.ceiling("G"));
-        StdOut.println("select(3):" + bst.select(3));
-//        bst.deleteMin();
-//        bst.deleteMax();
-        StdOut.println();
-        bst.print(bst.root);
-        StdOut.println();
-        bst.delete("E");
-        for (String key : bst.keys()){
-            StdOut.print(key + " ");
-        }
-        StdOut.println();
-        StdOut.println(bst.get("Y"));
-    }
 
     /**
      * 如果根结点的左链接为空，那么最小值就是根结点；否则，是左子树中的最小键。
@@ -361,6 +332,18 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
     }
 
     @Override
+    public int size() {
+        return size(root);
+    }
+
+    private int size(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return root.N;
+    }
+
+    @Override
     public Value get(Key key) {
         return get(root, key);
     }
@@ -377,18 +360,6 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
         } else {
             return x.val;
         }
-    }
-
-    @Override
-    public int size() {
-        return size(root);
-    }
-
-    private int size(Node root) {
-        if (root == null) {
-            return 0;
-        }
-        return root.N;
     }
 
     /**
@@ -436,4 +407,29 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
             N = n;
         }
     }
+
+    public static void main(String[] args) {
+        BST<String, Integer> bst = new BST<>();
+        StdOut.println("S E A R C H E X A M P L E");
+//        String[] strings = "S E A R C H E X A M P L E".split("\\s");
+        String[] strings = "S E A R C H X M".split("\\s");
+        for (int i = 0; i < strings.length; i++) {
+            bst.put(strings[i], i);
+        }
+        StdOut.println("floor: " + bst.floor("G"));
+        StdOut.println("ceiling: " + bst.ceiling("G"));
+        StdOut.println("select(3):" + bst.select(3));
+//        bst.deleteMin();
+//        bst.deleteMax();
+        StdOut.println();
+        bst.print(bst.root);
+        StdOut.println();
+        bst.delete("E");
+        for (String key : bst.keys()){
+            StdOut.print(key + " ");
+        }
+        StdOut.println();
+        StdOut.println(bst.get("Y"));
+    }
+
 }

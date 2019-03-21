@@ -1,6 +1,5 @@
-package qr3_search.section33_BalancedSearchTrees;
+package qr3_search;
 
-import com.leong.chapter03_Searching.BaseComparableBaseST;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
