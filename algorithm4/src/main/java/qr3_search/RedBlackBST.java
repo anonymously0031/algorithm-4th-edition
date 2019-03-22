@@ -2,8 +2,14 @@ package qr3_search;
 
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.TreeMap;
+
 /**
- * @author leongfeng created on 2017/11/21.
+ * 红黑树的另一种定义是含有红黑链接并满足下列条件的二叉查找树:
+ * 1.红链接均为左链接
+ * 2.没有任何一个结点同时和两条红链接相连
+ * 3.该树为完美黑色平衡的,即任意空链接到根结点的路径上的黑链接数量相同
+ * 满足这样定义的红黑树和相应的2-3树是一一对应的
  */
 public class RedBlackBST<Key extends Comparable<Key>, Value> extends BaseComparableBaseST<Key, Value> {
 
@@ -496,5 +502,9 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> extends BaseCompara
             return false;
         }
         return isBST(x.left, min, x.key) && isBST(x.right, x.key, max);
+    }
+
+    public static void main(String[] args) {
+        TreeMap treeMap = new TreeMap<>();
     }
 }
