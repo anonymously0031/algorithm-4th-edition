@@ -339,6 +339,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> extends BaseCompara
         if (isRed(h.left) && isRed(h.left.left)){
             h = rotateRight(h);
         }
+        //改变颜色
         if (isRed(h.left) && isRed(h.right)){
             flipColors(h);
         }
