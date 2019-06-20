@@ -2,9 +2,6 @@ package qr3_search;
 
 import edu.princeton.cs.algs4.StdOut;
 
-/**
- * @author leongfeng created on 2017/11/21.
- */
 public class RedBlackBST<Key extends Comparable<Key>, Value> extends BaseComparableBaseST<Key, Value> {
 
     private static final boolean RED = true;

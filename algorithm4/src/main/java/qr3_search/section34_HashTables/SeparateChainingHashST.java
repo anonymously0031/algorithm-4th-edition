@@ -1,7 +1,8 @@
 package qr3_search.section34_HashTables;
 
-import com.leong.chapter03_Searching.section31_SymbolTables.SequentialSearchST;
+//import com.leong.chapter03_Searching.section31_SymbolTables.SequentialSearchST;
 import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.SequentialSearchST;
 
 /**
  * 拉链法：

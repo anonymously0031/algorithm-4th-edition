@@ -91,4 +91,8 @@ public class LinearProbingHashST<Key, Value> {
     private int hash(Key key) {
         return (key.hashCode() & 0x7fffffff) % M;
     }
+
+    public static void main(String[] args) {
+        System.out.println(0x7fffffff);
+    }
 }

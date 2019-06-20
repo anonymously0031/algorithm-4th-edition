@@ -410,7 +410,7 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
 
     public static void main(String[] args) {
         BST<String, Integer> bst = new BST<>();
-        StdOut.println("S E A R C H E X A M P L E");
+//        StdOut.println("S E A R C H E X A M P L E");
 //        String[] strings = "S E A R C H E X A M P L E".split("\\s");
         String[] strings = "S E A R C H X M".split("\\s");
         for (int i = 0; i < strings.length; i++) {
@@ -419,6 +419,9 @@ public class BST<Key extends Comparable<Key>, Value> extends BaseComparableBaseS
         StdOut.println("floor: " + bst.floor("G"));
         StdOut.println("ceiling: " + bst.ceiling("G"));
         StdOut.println("select(3):" + bst.select(3));
+        for (int i = 0; i < strings.length; i++) {
+            StdOut.println(strings[i]+" --rank-- "+bst.rank(strings[i])+" --N-- "+bst.size());
+        }
 //        bst.deleteMin();
 //        bst.deleteMax();
         StdOut.println();
