@@ -28,7 +28,8 @@ public class DepthFirstPaths extends BasePaths {
 
 
     public static void main(String[] args) {
-        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath() + File.separator + "tinyGG.txt")));
+        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath()
+                + File.separator + "tinyGG.txt")));
         StdOut.println(graph);
         int s = 0;
         DepthFirstPaths dfp = new DepthFirstPaths(graph, s);
