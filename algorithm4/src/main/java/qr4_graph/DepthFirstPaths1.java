@@ -21,6 +21,7 @@ public class DepthFirstPaths1 {
         dfs(G, s);
     }
 
+    //原理二叉树后序遍历
     private void dfs(Graph G, int v) {
         marked[v] = true;
         for (int w : G.adj(v)) {
