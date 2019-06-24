@@ -106,7 +106,8 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        In in = new In(new File(BaseSearch.class.getResource("").getPath() + File.separator + "tinyG.txt"));
+        In in = new In(new File(BaseSearch.class.getResource("").getPath()
+                + File.separator + "tinyG.txt"));
         Graph g = new Graph(in);
         StdOut.println(g);
     }
