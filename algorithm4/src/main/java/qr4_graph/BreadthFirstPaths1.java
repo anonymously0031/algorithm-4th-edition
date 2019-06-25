@@ -7,7 +7,8 @@ import java.io.File;
 
 /**
  * 使用广度优先搜索查找图中的路径.
- *
+ * 单点最短路径.给定一幅图和一个起点s,从s到给定目的顶点v是否存在一条路径?
+ * 如果有,找出其中最短的那条(所含边数最少)---广度优先搜索
  * @author leongfeng created on 2017/11/26.
  */
 public class BreadthFirstPaths1 {

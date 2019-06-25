@@ -24,6 +24,7 @@ public class DepthFirstPaths1 {
     //原理二叉树后序遍历
     private void dfs(Graph G, int v) {
         marked[v] = true;
+        StdOut.print(v + "->");
         for (int w : G.adj(v)) {
             if (!marked[w]) {
                 edgeTo[w] = v;
