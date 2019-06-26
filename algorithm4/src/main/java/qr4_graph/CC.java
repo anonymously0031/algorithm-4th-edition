@@ -89,7 +89,8 @@ public class CC {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath() + File.separator + "tinyG.txt")));
+        Graph graph = new Graph(new In(new File(BaseSearch.class.getResource("").getPath()
+                + File.separator + "dfs-bfs.txt")));
         CC cc = new CC(graph);
         int M = cc.count();
         StdOut.println(M + " components");
