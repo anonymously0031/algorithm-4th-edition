@@ -40,7 +40,7 @@ public class TwoColor {
         Graph graph = new Graph(3);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
-//        graph.addEdge(1, 2);
+        graph.addEdge(1, 2);
         StdOut.println(graph);
         TwoColor twoColor = new TwoColor(graph);
         StdOut.println("is tow colorable?");
