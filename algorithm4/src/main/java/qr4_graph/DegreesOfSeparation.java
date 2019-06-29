@@ -27,6 +27,8 @@ public class DegreesOfSeparation {
                     for (int v : bfs.pathTo(t)){
                         StdOut.println(" " + sg.name(v));
                     }
+                    Stack<Integer> paths = (Stack<Integer>)bfs.pathTo(t);
+                    StdOut.println((paths.size() - 1) + " Degrees");
                 } else {
                     StdOut.println("Not Connected!");
                 }
