@@ -38,6 +38,13 @@ public class Topological {
         }
     }
 
+    /***
+     * @author wsl
+     * @date 2019/7/1 17:30
+     * @param
+     * @return boolean
+     * @desc 不是一个有向无环图
+     */
     public boolean isDAG(){
         return order != null;
     }
@@ -47,10 +54,14 @@ public class Topological {
     }
 
     public static void main(String[] args) {
-        SymbolDigraph symbolDigraph = new SymbolDigraph(TinyData.BASE_PATH + "tinyDAG.txt", "\\s");
-        Topological topo = new Topological(symbolDigraph.G());
-        for (int v : topo.order()){
-            StdOut.print(symbolDigraph.name(v) + " ");
+        Digraph digraph = new Digraph(TinyData.fromFilename("tinyDAG.txt"));
+        Topological topo = new Topological(digraph);
+        if(topo.isDAG()){
+            for (int v : topo.order()){
+                StdOut.print(v + " ");
+            }
+        }else {
+            StdOut.print("Directed Cycle Graph...");
         }
     }
 }
