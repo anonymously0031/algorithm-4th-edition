@@ -1,8 +1,8 @@
 package qr4_graph.section44_ShortestPaths;
 
-import com.leong.chapter01_Fundamentals.section13_BagsQueuesStacks.Stack;
-import com.leong.chapter04_Graph.TinyData;
-import com.leong.chapter04_Graph.section42_DirectedGraphs.Topological;
+import qr4_graph.section41_UndirectedGraphs.Stack;
+import qr4_graph.section41_UndirectedGraphs.TinyData;
+import qr4_graph.section42_DirectedGraphs.Topological;
 
 import static edu.princeton.cs.algs4.StdOut.print;
 import static edu.princeton.cs.algs4.StdOut.printf;

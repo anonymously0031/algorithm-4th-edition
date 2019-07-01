@@ -1,8 +1,8 @@
 package qr4_graph.section44_ShortestPaths;
 
-import com.leong.chapter04_Graph.TinyData;
 import edu.princeton.cs.algs4.IndexMinPQ;
 import edu.princeton.cs.algs4.Stack;
+import qr4_graph.section41_UndirectedGraphs.TinyData;
 
 import static edu.princeton.cs.algs4.StdOut.*;
 
