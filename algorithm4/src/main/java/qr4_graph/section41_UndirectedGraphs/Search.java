@@ -1,6 +1,4 @@
-package qr4_graph;
-
-import edu.princeton.cs.algs4.StdOut;
+package qr4_graph.section41_UndirectedGraphs;
 
 /**
  * @author leongfeng created on 2017/11/25.

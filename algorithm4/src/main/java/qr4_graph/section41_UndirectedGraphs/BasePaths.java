@@ -1,4 +1,4 @@
-package qr4_graph;
+package qr4_graph.section41_UndirectedGraphs;
 /**
  * @author leongfeng created on 2017/11/25.
  */

@@ -1,4 +1,4 @@
-package qr4_graph;
+package qr4_graph.section41_UndirectedGraphs;
 
 import edu.princeton.cs.algs4.StdOut;
 
@@ -39,7 +39,7 @@ public class Cycle {
         Graph graph = new Graph(3);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
+//        graph.addEdge(1, 2);
         StdOut.println(graph);
         Cycle cycle = new Cycle(graph);
         StdOut.println(graph + "has cycle ? ");

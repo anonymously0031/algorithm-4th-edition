@@ -1,10 +1,9 @@
-package qr4_graph;
+package qr4_graph.section41_UndirectedGraphs;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
