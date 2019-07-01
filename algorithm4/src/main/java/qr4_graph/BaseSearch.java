@@ -1,5 +1,7 @@
-package qr4_graph.section41_UndirectedGraphs;
+package qr4_graph;
 
+
+import qr4_graph.section41_UndirectedGraphs.Graph;
 
 /**
  * 找到图中与起点（source）连通的其他顶点.

@@ -1,7 +1,7 @@
 package qr4_graph.section42_DirectedGraphs;
 
 import edu.princeton.cs.algs4.StdOut;
-import qr4_graph.section41_UndirectedGraphs.BaseSearch;
+import qr4_graph.BaseSearch;
 import qr4_graph.section41_UndirectedGraphs.TinyData;
 
 /**

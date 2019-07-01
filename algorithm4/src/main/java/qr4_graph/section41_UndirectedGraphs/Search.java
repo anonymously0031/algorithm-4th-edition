@@ -1,5 +1,7 @@
 package qr4_graph.section41_UndirectedGraphs;
 
+import qr4_graph.BaseSearch;
+
 /**
  * @author leongfeng created on 2017/11/25.
  */

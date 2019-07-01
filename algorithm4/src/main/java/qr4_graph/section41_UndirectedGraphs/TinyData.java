@@ -1,6 +1,7 @@
 package qr4_graph.section41_UndirectedGraphs;
 
 import edu.princeton.cs.algs4.In;
+import qr4_graph.BaseSearch;
 
 import java.io.File;
 

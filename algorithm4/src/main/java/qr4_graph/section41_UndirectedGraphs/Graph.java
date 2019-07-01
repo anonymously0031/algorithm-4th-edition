@@ -3,6 +3,7 @@ package qr4_graph.section41_UndirectedGraphs;
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
+import qr4_graph.BaseSearch;
 
 import java.io.File;
 
