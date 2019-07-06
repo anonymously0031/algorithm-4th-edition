@@ -35,7 +35,7 @@ public class KosarajuSCC {
         DepthFirstOrder order = new DepthFirstOrder(G.reverse());
         //所得到的反向图的逆后序-再倒置的顺序,在原图中亦存在这样间隔的深度优先搜索顺序
         StdOut.println(order.reversePost());
-        //按照反向图的逆后序(拓扑排序)对原图进行深度优先搜索
+        //按照反向图的逆后序(非拓扑排序,有环图不能拓扑排序)对原图进行深度优先搜索
         for (int s : order.reversePost()) {
             if (!marked[s]) {
                 dfs(G, s);
