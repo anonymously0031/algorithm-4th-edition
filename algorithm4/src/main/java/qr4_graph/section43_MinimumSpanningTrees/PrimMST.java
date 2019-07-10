@@ -29,6 +29,7 @@ public class PrimMST  extends MST {
      * 有效的横切边.
      */
     private IndexMinPQ<Double> pq;
+
     private PrimMST(EdgeWeightedGraph G){
         edgeTo = new Edge[G.V()];
         distTo = new double[G.V()];
@@ -44,6 +45,11 @@ public class PrimMST  extends MST {
         }
     }
 
+    /**
+     * 向最小生成树中添加边的顺序和延时本版相同,不同之处在于优先队列的操作,
+     * 延时版本全部加入,然后每次循环删除权重最小的边检查其两个顶点是否已在树中,如果不都在,将其加入最小生成树,继续访问不在的顶点(如果都在将其忽略,判断下一个权重最小的边)
+     * 非延时版本加入部分不是最小的边,以顶点坐标访问其他邻接边,每次验证是否比已加入的边权重更小,如果更小,在优先队列中添加或者将其替换
+     */
     private void visit(EdgeWeightedGraph G, int v) {
         marked[v] = true;
         for (Edge e : G.adj(v)){
