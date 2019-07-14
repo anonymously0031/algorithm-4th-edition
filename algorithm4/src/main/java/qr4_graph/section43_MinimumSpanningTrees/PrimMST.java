@@ -38,6 +38,7 @@ public class PrimMST  extends MST {
             distTo[v] = Double.POSITIVE_INFINITY;
         }
         pq = new IndexMinPQ<>(G.V());
+        //从不同的顶点开始查找,得到同一个最小生成树 1 2 3...
         distTo[0] = 0;
         pq.insert(0, 0.0);
         while (!pq.isEmpty()){

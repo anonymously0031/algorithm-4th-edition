@@ -31,6 +31,7 @@ public class LazyPrimMST extends MST {
         mst = new Queue<>();
         pq = new MinPQ<>();
 
+        //从不同的顶点开始查找,得到同一个最小生成树 1 2 3...
         visit(G, 0);
         while (!pq.isEmpty()){
             Edge e = pq.delMin();
