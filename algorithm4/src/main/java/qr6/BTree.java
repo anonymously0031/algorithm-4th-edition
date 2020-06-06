@@ -1,5 +1,7 @@
 package qr6;
 
+import java.util.Hashtable;
+
 public class BTree<Key extends Comparable<Key>, Value> {
     private static final int M = 4;    // max children per B-tree node = M-1
 
@@ -46,33 +48,6 @@ public class BTree<Key extends Comparable<Key>, Value> {
         return HT;
     }
 
-
-    // search for given key, return associated value; return null if no such key
-    public Value get(Key key) {
-        return search(root, key, HT);
-    }
-
-    private Value search(Node x, Key key, int ht) {
-        Entry[] children = x.children;
-
-        // external node
-        if (ht == 0) {
-            for (int j = 0; j < x.m; j++) {
-                if (eq(key, children[j].key)) return (Value) children[j].value;
-            }
-        }
-
-        // internal node
-        else {
-            for (int j = 0; j < x.m; j++) {
-                if (j + 1 == x.m || less(key, children[j + 1].key))
-                    return search(children[j].next, key, ht - 1);
-            }
-        }
-        return null;
-    }
-
-
     // insert key-value pair
     // add code to check for duplicate keys
     public void put(Key key, Value value) {
@@ -88,20 +63,17 @@ public class BTree<Key extends Comparable<Key>, Value> {
         HT++;
     }
 
-
     private Node insert(Node h, Key key, Value value, int ht) {
         int j;
         Entry t = new Entry(key, value, null);
 
-        // external node
+        // external node 外部节点
         if (ht == 0) {
             for (j = 0; j < h.m; j++) {
+                //判断是否小于某一位数据的key
                 if (less(key, h.children[j].key)) break;
             }
-        }
-
-        // internal node
-        else {
+        }else {// internal node 内部节点
             for (j = 0; j < h.m; j++) {
                 if ((j + 1 == h.m) || less(key, h.children[j + 1].key)) {
                     Node u = insert(h.children[j++].next, key, value, ht - 1);
@@ -112,21 +84,49 @@ public class BTree<Key extends Comparable<Key>, Value> {
                 }
             }
         }
-
-        for (int i = h.m; i > j; i--) h.children[i] = h.children[i - 1];
+        //如果小于某个位置的key,将其和后面的数据相应后移一位,将新数据放在此位置
+        for (int i = h.m; i > j; i--) {
+            h.children[i] = h.children[i - 1];
+        }
         h.children[j] = t;
         h.m++;
-        if (h.m < M) return null;
-        else return split(h);
+        if (h.m < M) {
+            return null;
+        }else{
+            return split(h);
+        }
     }
 
     // split node in half
     private Node split(Node h) {
         Node t = new Node(M / 2);
         h.m = M / 2;
-        for (int j = 0; j < M / 2; j++)
+        for (int j = 0; j < M / 2; j++) {
             t.children[j] = h.children[M / 2 + j];
+        }
         return t;
+    }
+
+    // search for given key, return associated value; return null if no such key
+    public Value get(Key key) {
+        return search(root, key, HT);
+    }
+
+    private Value search(Node x, Key key, int ht) {
+        Entry[] children = x.children;
+
+        // external node 外部节点(最底层节点,包含<key,value>)
+        if (ht == 0) {
+            for (int j = 0; j < x.m; j++) {
+                if (eq(key, children[j].key)) return (Value) children[j].value;
+            }
+        } else {// internal node 内部节点
+            for (int j = 0; j < x.m; j++) {
+                if (j + 1 == x.m || less(key, children[j + 1].key))
+                    return search(children[j].next, key, ht - 1);
+            }
+        }
+        return null;
     }
 
     // for debugging

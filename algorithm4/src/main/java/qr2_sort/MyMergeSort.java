@@ -1,5 +1,8 @@
 package qr2_sort;
 
+import java.math.BigInteger;
+import java.util.*;
+
 public class MyMergeSort {
     static int number = 0;
 
@@ -8,6 +11,14 @@ public class MyMergeSort {
         printArray("排序前：", a);
         MergeSort(a);
         printArray("排序后：", a);
+        Map<String, List<String>> map = newHashMap();
+        Set set = Collections.EMPTY_SET;
+        BigInteger bigInteger = new BigInteger("5");
+        StringBuffer stringBuffer = new StringBuffer();
+    }
+
+    public static <K,V>HashMap<K,V> newHashMap(){
+        return new HashMap<K,V>();
     }
 
     private static void printArray(String pre, int[] a) {
