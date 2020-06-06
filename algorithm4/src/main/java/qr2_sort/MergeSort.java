@@ -91,7 +91,7 @@ public class MergeSort extends BaseSort {
                 // 3.2 aux[]右半部分已经用尽，需要操作左半部分元素
             } else if (j > hi) {
                 arr[k] = aux[i++];
-                // 3.3 如果a[j] < a[i]，即右边大于左边，那么取右边的当前元素
+                // 3.3 如果a[j] < a[i]，即右边小于左边，那么取右边的当前元素
             } else if (less(aux[j], aux[i])) {
                 arr[k] = aux[j++];
                 // 3.4 a[j] > a[i]，取左边的元素
